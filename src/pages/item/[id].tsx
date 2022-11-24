@@ -5,8 +5,8 @@ export default function Item() {
     const itemID: string = query.id?.toString() || 'No Item'
 
     return (
-        <div>
+        <main>
             <h1 className='text-2xl'>{itemID}</h1>
-        </div>
+        </main>
     )
 }

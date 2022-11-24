@@ -1,7 +1,7 @@
-import { IInputProps } from '../interfaces/interfaces'
+import { IInputTextProps } from '../interfaces/interfaces'
 
 
-export default function Input({children, Icon, type, name, label, value, placeholder, message }: IInputProps) {
+export default function InputText({ children, Icon, type, focus, name, label, value, placeholder, message, onChange }: IInputTextProps) {
     return (
         <div className='relative'>
             {
@@ -9,20 +9,22 @@ export default function Input({children, Icon, type, name, label, value, placeho
                     <label htmlFor={name} className='block text-base font-bold text-gray-700'>{label}</label>
                 </div>
             }
-            <div className='flex w-full rounded-md bg-[#EAEAEA] focus:bg-[#F2F2F2] text-[#222222]'>
-                {
-                    Icon && <label className='p-4 text-[#666666] htmlFor={name}'>
-                        <Icon size='1.4rem' stroke={2} aria-hidden="true" />
-                    </label>
-                }
+            <div className='flex w-full rounded-md bg-[#EAEAEA] focus:bg-[#F2F2F2]'>
                 <input
                     type={type}
                     name={name || label && label.toLowerCase()}
                     id={name}
                     value={value}
                     placeholder={placeholder}
-                    className='w-full bg-transparent outline-none pr-4 text-sm'
+                    className='w-full bg-transparent outline-none pl-4 text-sm'
+                    autoFocus={focus}
+                    onChange={onChange}
                 />
+                {
+                    Icon && <label className='px-4 py-3 text-[#666666]' htmlFor={name}>
+                        <Icon size='1.4rem' stroke={2} aria-hidden="true" />
+                    </label>
+                }
                 {children}
             </div>
             {

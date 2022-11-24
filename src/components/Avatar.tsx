@@ -8,40 +8,39 @@ const classNames = (...classes: any) => classes.filter(Boolean).join(' ')
 const listOptions = [
     {
         name: 'Perfil',
-        href: '/profile',
+        href: 'profile',
         icon: IconUser,
     },
     {
         name: "Lista de deseos",
-        href: "/whishlist",
+        href: "whishlist",
         icon: IconGift,
     },
     {
         name: 'Configuración',
-        href: '/settings',
+        href: 'settings',
         icon: IconSettings,
     },
     {
         name: "Cerrar sesión",
-        href: "/logout",
+        href: "logout",
         icon: IconLogout,
     }
 ]
 
+
 export default function Avatar() {
-    const { user, isLoading, error } = useUser()
+    const { user } = useUser()
+    const nameInitials: string = user?.name.firstName.split(' ')[0].charAt(0) + user?.name.lastName.split(' ')[0].charAt(0) || ''
 
     return (
         <div className="cursor-pointer">
-            {
-                user ? '' : null
-            }
             <Popover className="relative">
                 {({ open }) => (
                     <>
                         <Popover.Button className={classNames(open ? 'text-gray-900' : '')}>
                             <div className="inline-flex overflow-hidden relative justify-center items-center w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600">
-                                <span className="font-medium text-gray-600 dark:text-gray-300">AV</span>
+                                <span className="font-medium text-gray-600 dark:text-gray-300">{nameInitials.toLocaleUpperCase()}</span>
                             </div>
                         </Popover.Button>
 

@@ -8,7 +8,7 @@ export default function Item() {
     return (
         <main>
             <div className='w-full'>
-                <ItemsList category={query?.id?.toString()} className='overflow-hidden h-auto grid grid-cols-4' />
+                <ItemsList category={query?.id?.toString()} orientation='vertical' />
             </div>
         </main>
     )

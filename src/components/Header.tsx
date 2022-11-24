@@ -6,6 +6,7 @@ import Inbox from './Inbox'
 import Avatar from './Avatar'
 import CategoryList from './CategoryList'
 import { IInboxItemProps } from '../interfaces/interfaces'
+import { useUser } from '../hooks/useUser'
 
 
 export default function Header() {
@@ -109,6 +110,7 @@ export default function Header() {
             created_at: '2022-07-01 06:00:00'
         }
     ]
+    const { user } = useUser()
 
     return (
         <header className='flex inset-x-0 items-center bg-white border-b py-2 px-12 text-base select-none'>
@@ -120,7 +122,7 @@ export default function Header() {
             </div>
             <div className='w-full flex justify-end'>
                 <nav>
-                    <ul className='flex items-center gap-6 text-gray-800 focus:outline-none focus:text-gray-900'>
+                    <ul className='flex items-center gap-6 focus:outline-none focus:text-gray-900'>
                         <li>
                             <Link href="/">Inicio</Link>
                         </li>
@@ -128,7 +130,7 @@ export default function Header() {
                             <CategoryList />
                         </li>
                         {
-                            !true ? (
+                            !user ? (
                                 <>
                                     <li>
                                         <Link href="/signin">Iniciar sesión</Link>
@@ -139,6 +141,9 @@ export default function Header() {
                                 </>
                             ) : (
                                 <>
+                                    <li>
+                                        <Link href="/selling">Venta</Link>
+                                    </li>
                                     <li>
                                         <Inbox type='message' data={messages} />
                                     </li>

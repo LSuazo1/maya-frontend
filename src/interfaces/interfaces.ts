@@ -41,8 +41,9 @@ export interface IItemsListProps {
     category?: string
     title?: string
     limit?: number
-    orientation?: string
+    orientation?: 'horizontal' | 'vertical'
     scroll?: boolean
+    columns?: number
     className?: React.HTMLAttributes<HTMLDivElement>['className']
 }
 
@@ -72,13 +73,34 @@ export interface InboxProps {
     // onRemoveAll: () => void;
 }
 
-export interface IInputProps {
+export interface IInputTextProps {
     children?: React.ReactNode
-    type?: 'text' | 'email' | 'password'
+    type?: 'text' | 'email' | 'password' | 'textarea' | 'select'
     name: string
     label?: string
     Icon: FunctionComponent<TablerIconProps>
     value?: string
     placeholder?: string
+    focus?: boolean
     message?: string
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
+
+export interface IUser {
+    id: number
+    name: string
+    email: string
+    token: string
+}
+
+export interface IUseUserProps {
+    id?: string
+}
+
+export interface IInputFileProps {
+    
+}
+
+export interface IHash {
+    [key: string] : any;
+} 

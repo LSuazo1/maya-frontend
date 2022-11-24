@@ -6,7 +6,7 @@ export default function Logo() {
     return (
         <span>
             <Link href="/">
-                <Image draggable={false} src='/maya.svg' width={90} height={40} alt="Maya Logo" />
+                <Image draggable={false} src='/logo.svg' width={90} height={40} alt="Logo" />
             </Link>
         </span>
     )

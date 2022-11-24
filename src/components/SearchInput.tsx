@@ -1,5 +1,5 @@
 import { IconSearch } from "@tabler/icons"
-import Input from "./Input"
+import Input from "./InputText"
 
 
 export default function SearchInput() {

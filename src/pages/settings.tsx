@@ -4,7 +4,7 @@ export default function Settings() {
     return (
         <div className=''>
             <Head>
-                <title>Configuración | Maya</title>
+                <title>Configuración</title>
                 <meta name="description" content="Ecommerce" />
             </Head>
 

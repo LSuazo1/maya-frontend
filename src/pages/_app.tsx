@@ -15,22 +15,21 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <SWRConfig value={{ fetcher }}>
-            <div className={`framer bg-[#F6F6F6] ${ibmPlexSans.className}`}>
+        <SWRConfig value={{ fetcher, refreshInterval: 1000 }}>
+            <div className={`framer bg-[#F6F6F6] text-[#111111] ${ibmPlexSans.className}`}>
                 <Head>
-                    <title>Alexis Vallecillo</title>
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <section className="header">
+                <section className='header w-full sticky top-0 z-10'>
                     <Header />
                 </section>
 
-                <section className="main">
+                <section className='main'>
                     <Component {...pageProps} />
                 </section>
 
-                <section className="footer">
+                <section className='footer'>
                     <Footer />
                 </section>
             </div>

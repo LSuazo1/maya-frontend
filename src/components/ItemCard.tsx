@@ -7,7 +7,7 @@ export default function ItemCard(props: { data: IItemProps }) {
     const { id, title, thumbnail, price, location } = props.data
 
     return (
-        <div className="p-3 min-w-[25%] rounded-lg h-full bg-white">
+        <div className="p-3 overflow-hidden h-min min-w-[300px] max-w-[300px] shadow-sm rounded-lg bg-white">
             <div className="image relative h-64">
                 <Image src={thumbnail} loading='lazy' fill sizes='w-full' className="object-cover rounded-md" alt="No se encuentra" />
             </div>

@@ -22,9 +22,9 @@ const timeCalculator = (fecha: string) => {
 }
 
 
-export default function Notification({ id, title, message, type, href, created_at }: IInboxItemProps) {
+export default function InboxItem({ id, title, message, type, href, created_at }: IInboxItemProps) {
     return (
-        <Link href={`${type}/${href}`} className='flex items-start rounded-lg py-3 px-4 hover:bg-gray-50'>
+        <Link href={`${type}/${href}`} className='flex items-start rounded-lg py-2 px-4 hover:bg-gray-50'>
             <div className='w-64 flex-row'>
                 <div>
                 </div>

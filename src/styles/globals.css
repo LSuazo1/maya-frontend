@@ -24,7 +24,7 @@
 header,
 main,
 footer {
-    padding: 4rem 6rem;
+    padding: 4rem 8rem;
     display: flex;
     justify-content: center;
 }
@@ -32,6 +32,27 @@ footer {
 main {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+}
+
+._ix0f {
+    margin-bottom: 8px;
+}
+
+._ix0f > a {
+    border-radius: 6px;
+    width: 100%;
+    padding: 0.8rem 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dr95d {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /* 

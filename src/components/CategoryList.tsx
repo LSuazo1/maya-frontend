@@ -77,7 +77,7 @@ export default function CategoryList() {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                         >
-                            <Popover.Panel className="absolute w-52 mt-4 z-10">
+                            <Popover.Panel className="absolute right-0 w-52 mt-4 z-10">
                                 <div className="relative grid gap-1 rounded-md shadow-lg bg-white p-2">
                                     {categories.map((category: any) => (
                                         <Link

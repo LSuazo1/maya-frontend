@@ -1,22 +1,13 @@
 import useSWR from 'swr'
 
-interface User {
-    id: number
-    name: string
-    email: string
-    avatar: string
-}
 
-interface IUseUserProps {
-    id?: string
-}
-
-export const useUser = (props?: IUseUserProps) => {
-    const { data: user, error, mutate } = useSWR('/api/user')
+export const useUser = () => {
+    const { data: user, error, mutate } = useSWR('user')
 
     return {
         isLoading: !error && !user,
-        error,
+        loggedIn: !error && user,
+        loggedOut: error && error.status === 403,
         user,
         mutate
     }
