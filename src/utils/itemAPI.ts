@@ -12,10 +12,7 @@ export const getItems = async (id: string) => {
 }
 
 export const createItem = async (data: object) => {
-    try {
-        const res = await axios.post(`${process.env.API_URL}/items`, data)
-        return res.data
-    } catch (error) {
-        console.log(error)
-    }
+    await axios.post(`${process.env.API_URL}/items`, data, { headers: { 'Content-Type': 'multipart/form-data' } })
+        .then(res => res.data)
+        .catch(err => console.log(err.response.data))
 }
